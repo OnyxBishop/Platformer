@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8611422310991317376}
   - component: {fileID: 8611422310991317377}
   - component: {fileID: 8611422310991317378}
-  m_Layer: 4
+  m_Layer: 6
   m_Name: sharp wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}

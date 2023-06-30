@@ -9,8 +9,6 @@ public class WalkingMonster : MonoBehaviour
     
     private float _speed = 3.5f;
 
-    [SerializeField] private Transform _transform;
-
     private Vector2 _direction;
     private SpriteRenderer _spriteRenderer;
 
@@ -19,7 +17,6 @@ public class WalkingMonster : MonoBehaviour
         _direction = transform.right;
 
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _transform = GetComponent<Transform>();
     }
 
     private void Update()
@@ -29,7 +26,7 @@ public class WalkingMonster : MonoBehaviour
 
     private void Move()
     {
-        RaycastHit2D hit = Physics2D.Raycast(_transform.position, _direction, _distanceRay, _layer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, _direction, _distanceRay, _layer);
 
         if (hit == true)
         {

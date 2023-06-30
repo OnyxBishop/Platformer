@@ -31,14 +31,14 @@ public class HeroMovement : MonoBehaviour
     private void Update()
     {
         if (_isGrounded == true)
-            State = States.idle;     
+            State = States.idle;
 
         if (Input.GetButton("Horizontal"))
             Run();
 
         if (_isGrounded == true && Input.GetButtonDown("Jump"))
         {
-            Jump();          
+            Jump();
         }
     }
 
@@ -60,12 +60,14 @@ public class HeroMovement : MonoBehaviour
 
     private void Jump()
     {
-        _rb.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);  
+        _rb.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
     }
 
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.8f);
+        float overlapRadius = 0.8f;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, overlapRadius);
 
         _isGrounded = colliders.Length > 1;
     }
