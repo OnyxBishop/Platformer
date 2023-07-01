@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class HeroHealth : MonoBehaviour
 {
     [SerializeField] private Slider _healthBar;
-
     [SerializeField] private float _sliderSpeed;
-    private const float _maxHealth = 100f;
+
+    private const float MAX_HEALTH = 100f;
+
     private float _currentHealth;
 
     private void Start()
     {
-        _currentHealth = _maxHealth;
+        _currentHealth = MAX_HEALTH;
         _healthBar.value = _currentHealth;
     }
 
@@ -33,7 +34,7 @@ public class HeroHealth : MonoBehaviour
 
     public void Heal()
     {
-        if (_currentHealth <= _maxHealth)
+        if (_currentHealth <= MAX_HEALTH)
         {
             float healValue = 10f;
             _currentHealth += healValue;

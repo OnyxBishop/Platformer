@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraSetter : MonoBehaviour
 {
     [SerializeField] private Transform _player;
 
-    private Vector3 position;
+    private float _cameraHigherOn = 1.5f;
+    private float _cameraDepth = -10f;
 
-    private void Awake()
-    {
-        if (!_player)
-            _player = FindObjectOfType<HeroMovement>().transform;
-    }
+    private Vector3 position;
 
     private void Update()
     {
         position = _player.position;
-        position.y += 1.5f;
-        position.z = -10f;
+        position.y += _cameraHigherOn;
+        position.z = _cameraDepth;
 
         transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime);
     }
