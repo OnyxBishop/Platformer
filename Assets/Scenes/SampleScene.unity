@@ -1359,11 +1359,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292877534}
   m_CullTransparentMesh: 1
---- !u!1 &1314807261 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8422200405170920030, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-  m_PrefabInstance: {fileID: 8422200404050710570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1318539965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,20 +1773,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
   m_PrefabInstance: {fileID: 8422200404050710570}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1745801163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314807261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df3da0e6e9c56b4408a4b5976598ab8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBar: {fileID: 1732177447}
-  _sliderSpeed: 50
 --- !u!1 &1802287703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +1958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfe9d86952491e4980d803ef6f8ea2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hero: {fileID: 1745801163}
 --- !u!1 &1913095405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,45 +3041,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 45459277413066977, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2626503
-      objectReference: {fileID: 0}
-    - target: {fileID: 45459277413066977, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_Size.y
-      value: 2.0202801
-      objectReference: {fileID: 0}
-    - target: {fileID: 45459277413066977, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.031998515
-      objectReference: {fileID: 0}
-    - target: {fileID: 45459277413066977, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.99999774
-      objectReference: {fileID: 0}
-    - target: {fileID: 3935609718917152674, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 3935609718917152674, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.01
-      objectReference: {fileID: 0}
+    - target: {fileID: 6214058599648410619, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
+      propertyPath: _slider
+      value: 
+      objectReference: {fileID: 1732177447}
+    - target: {fileID: 6214058599648410619, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
+      propertyPath: _buttons
+      value: 
+      objectReference: {fileID: 1819125876}
     - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3140,14 +3092,6 @@ PrefabInstance:
     - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422200405170920018, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422200405170920019, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
-      propertyPath: _jumpForce
-      value: 13.5
       objectReference: {fileID: 0}
     - target: {fileID: 8422200405170920030, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
       propertyPath: m_Name

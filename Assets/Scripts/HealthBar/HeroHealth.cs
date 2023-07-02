@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,44 +6,33 @@ using UnityEngine.UI;
 
 public class HeroHealth : MonoBehaviour
 {
-    [SerializeField] private Slider _healthBar;
-    [SerializeField] private float _sliderSpeed;
+    private const float MaxHealth = 100f;
 
-    private const float MAX_HEALTH = 100f;
+    public float Current { get; private set; }
 
-    private float _currentHealth;
-
-    private void Start()
+    public void Initialize()
     {
-        _currentHealth = MAX_HEALTH;
-        _healthBar.value = _currentHealth;
+        Current = MaxHealth;
     }
 
-    private void Update()
+    public void TryTakeDamage(float damage)
     {
-        UpdateHealthBar();
-    }
-
-    public void TryTakeDamage()
-    {
-        if (_currentHealth >= 0)
+        if (Current >= damage)
         {
-            float damage = 10f;
-            _currentHealth -= damage;
+            Current = Mathf.Clamp(Current - damage, 0, MaxHealth);
+        }
+        else
+        {
+            Current = 0;
+            //Hero.Die() 
         }
     }
 
-    public void Heal()
+    public void Heal(float healValue)
     {
-        if (_currentHealth <= MAX_HEALTH)
+        if (Current < MaxHealth)
         {
-            float healValue = 10f;
-            _currentHealth += healValue;
+            Current = Mathf.Clamp(Current + healValue, 0, MaxHealth);
         }
-    }
-
-    private void UpdateHealthBar()
-    {
-        _healthBar.value = Mathf.MoveTowards(_healthBar.value, _currentHealth, Time.deltaTime * _sliderSpeed);
     }
 }

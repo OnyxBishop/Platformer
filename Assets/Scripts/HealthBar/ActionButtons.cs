@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class ActionButtons : MonoBehaviour
 {
-    [SerializeField] private HeroHealth _hero;
+    private HeroHealth _hero;
 
-    public void OnDamageButtonClicked()
+    private float healButtonValue = 10.5f;
+    private float damageButtonValue = 28.125f;
+
+    public void Initialize(HeroHealth hero)
     {
-        _hero.TryTakeDamage();
+        _hero = hero;
     }
 
     public void OnHealButtonClicked()
     {
-        _hero.Heal();
+        _hero.Heal(healButtonValue);
+    }
+
+    public void OnDamageButtonClicked()
+    {
+        _hero.TryTakeDamage(damageButtonValue);
     }
 }
