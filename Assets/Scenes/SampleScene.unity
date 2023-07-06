@@ -3041,6 +3041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5174302162878009009, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
+      propertyPath: _sliderSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6214058599648410619, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
       propertyPath: _slider
       value: 
@@ -3097,7 +3101,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2926921914692542985, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 780f3044ab57e9e4193cdb6941059341, type: 3}
 --- !u!1001 &8611422309192603335
 PrefabInstance:

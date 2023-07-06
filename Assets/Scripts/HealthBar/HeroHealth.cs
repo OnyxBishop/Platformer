@@ -1,28 +1,23 @@
+using System;
 using UnityEngine;
 
-
-public class HeroHealth : MonoBehaviour
+public class HeroHealth
 {
+    public event Action HealthChanged;
+
     private const float MaxHealth = 100f;
 
-    public float Current { get; private set; }
-
-    public void Initialize()
+    public HeroHealth()
     {
         Current = MaxHealth;
     }
 
+    public float Current { get; private set; }
+
     public void TryTakeDamage(float damage)
     {
-        if (Current >= damage)
-        {
-            Current = Mathf.Clamp(Current - damage, 0, MaxHealth);
-        }
-        else
-        {
-            Current = 0;
-            //Hero.Die() 
-        }
+        Current = Mathf.Clamp(Current - damage, 0, MaxHealth);
+        HealthChanged.Invoke();
     }
 
     public void Heal(float healValue)
@@ -30,6 +25,7 @@ public class HeroHealth : MonoBehaviour
         if (Current < MaxHealth)
         {
             Current = Mathf.Clamp(Current + healValue, 0, MaxHealth);
+            HealthChanged.Invoke();
         }
     }
 }
