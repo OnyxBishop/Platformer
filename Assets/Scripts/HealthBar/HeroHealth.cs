@@ -17,7 +17,7 @@ public class HeroHealth
     public void TryTakeDamage(float damage)
     {
         Current = Mathf.Clamp(Current - damage, 0, MaxHealth);
-        HealthChanged.Invoke();
+        HealthChanged?.Invoke();
     }
 
     public void Heal(float healValue)
@@ -25,7 +25,7 @@ public class HeroHealth
         if (Current < MaxHealth)
         {
             Current = Mathf.Clamp(Current + healValue, 0, MaxHealth);
-            HealthChanged.Invoke();
+            HealthChanged?.Invoke();
         }
     }
 }
